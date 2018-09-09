@@ -1,13 +1,19 @@
-import React, { Component } from 'react';
-import { Router, Route, browserHistory, IndexRedirect } from 'react-router';
+import React from 'react';
+import { Router, Route, IndexRedirect,browserHistory } from 'react-router';
 import Login from './container/login'
 import Register from './container/register'
 import App from './App';
 import Home from './container/Home';
 
+
+// const reducer = combineReducers({
+//   ...reducers,
+//   routing: routerReducer
+// })
 const Routes = () => {
   return (
-    <Router history={browserHistory}>
+    <Router history={browserHistory} >
+    <Route path="/">
     <IndexRedirect to="login"/>
       <Route path="/App" component={App}>
       <IndexRedirect to="Home"/>
@@ -15,6 +21,7 @@ const Routes = () => {
         </Route>
       <Route path="/Register" component={Register}/>
        <Route path="/login" component={Login}/>
+       </Route>
     </Router>
   );
 };
