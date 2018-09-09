@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
+// import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-router';
 
 import registerServiceWorker from './registerServiceWorker';
-import reducers from './reducer';
+import reducers from './redux/reducer';
 import './config';
-import App from './App';
+import RouterIndex from './RouterIndex';
 registerServiceWorker()
 
 const store = createStore(reducers, compose(
@@ -17,8 +18,6 @@ const store = createStore(reducers, compose(
 ))
 
 ReactDOM.render( <Provider store={store}>
-    <BrowserRouter>
-        <App></App>
-    </BrowserRouter>
+        <RouterIndex />
 </Provider>, document.getElementById('root'));
 registerServiceWorker();
