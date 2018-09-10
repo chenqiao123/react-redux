@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router'
-import AppleBasket from '../../component/Home/Apple/AppleBasket';
+
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import actions from './actions/HomeAction';
+import actions from './actions/homeAction';
 class Home extends React.Component {
     render() {
         const props = this.props;
@@ -20,7 +20,8 @@ class Home extends React.Component {
     }
 }
 const mapStateToProps = state => ({
-    Home: state.HomeRootReducer
+    HomeRoot: state.HomeRoot,//获取首页的数据
+    appleBasket: state.appleBasket,//获取其他页面的数据
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -28,4 +29,3 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
-

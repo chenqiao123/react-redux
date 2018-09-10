@@ -36,7 +36,7 @@ class App extends Component {
           defaultSelectedKeys={['2']}
           style={{ lineHeight: '64px' ,width:"100%"}}
         >
-          <Menu.Item key="1"> <Link to="/Register">推出0Register0</Link></Menu.Item>
+          <Menu.Item key="1"> <Link to="/app/AppleBasket">AppleBasket</Link></Menu.Item>
           <Menu.Item key="2"> <Link to="/Login">推Login</Link></Menu.Item>
           <Menu.Item key="3"> <Link to="/Register">推出0Register0</Link></Menu.Item>
         </Menu>

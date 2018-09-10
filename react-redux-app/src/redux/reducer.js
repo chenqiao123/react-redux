@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 // import HomeRootReducer from '../component/';
 // import reducerapp from '../component/Redux/reducers';
-import appleBasketReducer from '../component/Redux/reducers/appleBasketReducer';
-
+import appleBasketReducer from '../component/redux/reducers/appleBasketReducer';
+import HomeRootReducer from '../container/Home/indexRedux';
 const initialState = {
     isPicking: false,
     newAppleId: 3,
@@ -28,9 +28,8 @@ const initialState = {
 //     return state
 // }
 const reducerS = combineReducers({
-    // reducer,
-    appleBasket: appleBasketReducer ,
-    // HomeRootReducer
+    appleBasket:appleBasketReducer,
+    HomeRoot:HomeRootReducer,
 });
 
 export default combineReducers({reducerS})
